@@ -5,7 +5,7 @@ import classes from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = (props) => {
-    // tranform ingredients object to array
+    // transform ingredients object to array
     let transformIngredients = Object.keys(props.ingredients)
         .map(igKey => {
             return [...Array(props.ingredients[igKey])].map((_, i) => {
@@ -15,7 +15,7 @@ const Burger = (props) => {
         .reduce((pre, cur) => {
             return pre.concat(cur);
         }, []);
-    
+    // display recommend in case burger don't have any ingredient
     if (transformIngredients.length === 0) {
         transformIngredients = <p>Please start adding ingredients</p>
     }
